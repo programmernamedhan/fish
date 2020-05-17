@@ -68,7 +68,7 @@ while(transnum--)
 	printf("recv mesg:%s\n",buff1);
 
 	memset(buff2,0,sizeof(buff2));
-	memcpy(buff2,content,strlen(content));//sizeof(content)=8,显示的是指针的大小非串长度
+	memcpy(buff2,content,strlen(content)+1);//sizeof(content)=8,显示的是指针的大小非串长度
 	if(send(connfd,buff2,strlen(content)+1,0)==-1)
 	{
 		perror("send");
